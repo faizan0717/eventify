@@ -4,6 +4,9 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import { auth } from "./firebase";
+import ValidateQR from "./pages/validate_qr"
+import RecommendationPage from "./pages/recomendationPage";
+import FeedbackPage from "./pages/FeedbackPage";
 
 function App() {
   const [user, setUser] = React.useState(null);
@@ -32,6 +35,9 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={user ? <Navigate to="/dashboard" /> : <Login />} />
         <Route path="/dashboard" element={user ? <Dashboard /> : <Navigate to="/login" />} />
+        <Route path="/validate/:id" element={<ValidateQR />} />
+        <Route path="/recommendations" element={<RecommendationPage />} />
+        <Route path="/feedback/:id" element={<FeedbackPage />} />
       </Routes>
     </Router>
   );
