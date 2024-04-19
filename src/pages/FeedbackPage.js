@@ -59,12 +59,13 @@ const FeedbackPage = () => {
       <div>
         <h3>All Feedbacks</h3>
         <ul className="list-group">
-          {feedbacks[0].map((feedback, index) => (
-            <li key={index} className="list-group-item">
-              <p>Stars: {feedback.stars}</p>
-              <p>Comments: {feedback.comments}</p>
-            </li>
-          ))}
+        {feedbacks.length > 0 && feedbacks[0].map((feedback, index) => (
+          <li key={index} className="list-group-item">
+            <p>Stars: {feedback.stars}</p>
+            <p>Comments: {feedback.comments}</p>
+          </li>
+        ))}
+
         </ul>
       </div>
     </div>
